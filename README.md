@@ -1,5 +1,5 @@
 # Challenge-Oracle-ONE
-# 📝 Descripción
+# Descripción
 
 Este proyecto es una aplicación que utiliza HTML, CSS, JavaScript para encriptar y desencriptar texto. La encriptación se realiza mediante la sustitución de ciertas letras por otras según un conjunto específico de reglas. La aplicación solo acepta letras minúsculas y no se permiten acentos ni caracteres especiales.
 
@@ -35,7 +35,7 @@ La página web cuenta con campos para que el usuario pueda ingresar el texto que
 | ober | o |
 | ufat | u |
 
-# 📑 Requisitos
+# Requisitos
 
 - ✅ Debe funcionar solo con letras minúsculas
 - ✅ No deben ser utilizados letras con acentos ni caracteres especiales
