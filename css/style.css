@@ -30,3 +30,15 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.form textarea {
+    height: 100%;
+    margin: 6rem 0 0 0;
+    color: var(--dark-blue-300);
+    resize: none;
+    font-size: 2em;
+}
+
+.form textarea:focus {
+     outline: none;
+}
