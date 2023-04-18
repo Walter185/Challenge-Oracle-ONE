@@ -10,6 +10,11 @@ La página web cuenta con campos para que el usuario pueda ingresar el texto que
     <img src="https://liendo.s3.sa-east-1.amazonaws.com/figma.png">
 </div>
 
+# Trello 
+<div align="center">
+    <img src="https://liendo.s3.sa-east-1.amazonaws.com/trello.png">
+</div>
+
 ## Diccionario de encriptacion
 | Llave | Reemplazo |
 |-----------|-----------|
