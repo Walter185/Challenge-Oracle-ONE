@@ -31,7 +31,17 @@ body {
 }
 
 .form {
-    
+    max-width: 42.5rem;
+    width: 100%;
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagen_info {
+    width: 16px;
+    height: 16px;
+    position: absolute;
 }
 
 .form textarea {
@@ -52,6 +62,13 @@ body {
      outline: none;
 }
 
+.contenedor_botones {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
 
 /*button*/
 /*Auto layout*/
@@ -63,7 +80,7 @@ body {
     gap: 8px;
     width: 328px;
     height: 67px;
-
+    cursor: pointer;
     /*Dark Blue*/
     background: #0A3871;
     border-radius: 24px;
@@ -112,6 +129,6 @@ body {
     flex-direction: column;
 }
 
-.toy {
+.imagen_toy {
     margin: 0 0 2rem 0;
 }

@@ -13,18 +13,27 @@
     <div class="container">
         <header class="header">
             <h1>
-                <img class="logo" src="img/logo.png" alt="Alura" title="Alura">
+                <a href="/">
+                    <img class="logo" src="img/logo.png" alt="Alura" title="Alura">   
+                </a>
             </h1>
         </header>
 
         <form class="form">
             <textarea placeholder="Ingrese el texto aquí"></textarea>
-            <button class="boton_encriptar">Encriptar</button>
-            <button class="boton_desencriptar">Desencriptar</button>
+            <div class="info">
+                <img class="imagen_info" src="img/info.png" alt="info" loading="lazy">
+                <p class="disable">Sólo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="contenedor_botones">
+                <button class="boton_encriptar">Encriptar</button>
+                <button class="boton_desencriptar">Desencriptar</button> 
+            </div>
+          
         </form>
         <div class="card">
             <div class="contenedor_toy">
-                <img class="toy" src="img/toy.png" alt="toy" loading="lazy">
+                <img class="imagen_toy" src="img/toy.png" alt="toy" loading="lazy">
                 <div>
                     <p>Ningún mensaje fue encontrado</p>
                     <p>Ingresa el texto que deseas encriptar o desencriptar</p>
