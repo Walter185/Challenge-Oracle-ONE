@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 body {
-    background: #e5e5e5;
+    background: #F3F5FC;
+    color: #343A40;
     font-family: 'Inter', sans-serif;
 }
 
@@ -10,7 +11,6 @@ body {
     min-height: 100vh;
     max-width: 90rem;
     padding: 2.5rem;
-
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -22,12 +22,7 @@ body {
 }
 
 .header h1 {
-    position: absolute;
-    left: 5.21%;
-    right: 90.74%;
-    top: 5.42%;
-    bottom: 91.16%;
- 
+    margin: 0 2.75rem 0 2.75rem;
 }
 
 .form {
@@ -38,43 +33,39 @@ body {
     flex-direction: column;
 }
 
-.disable {
-    width: 205px;
-    height: 18px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 150%;
-    color: #495057;
-    opacity: 0.8;
-    /*Inside Auto Layout*/
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-.imagen_info {
-    width: 16px;
-    height: 16px;
-    position: absolute;
-}
-
-.form textarea {
-    position: absolute;
-    width: 577px;
-    height: 48px;
-    left: 240px;
-    top: 168px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 150%;
+.form_textarea {
+    height: 100%;
+    margin: 6rem 0 0 0;
+    font-size: 2em;
+    resize: none;
     color: #0A3871;
 }
 
-.form textarea:focus {
-     outline: none;
+.form_textarea:focus {
+    outline: none;
+}
+
+.form_textarea::placeholder {
+    color: #0A3871;
+}
+
+.disable {
+    font-size: .75rem;
+    line-height: 150%;
+    color: #495057;
+}
+
+.info {
+    max-height: 1.125rem;
+    margin: 1rem 0 1rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.imagen_info {
+    width: 1rem;
+    margin: 1px .5rem 1px 0;
 }
 
 .contenedor_botones {
@@ -85,58 +76,47 @@ body {
     gap: 1.5rem;
 }
 
-/*button*/
-/*Auto layout*/
 .boton_encriptar {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 8px;
-    width: 328px;
-    height: 67px;
+    padding: 1.5rem;
+    width: 100%;
     cursor: pointer;
-    /*Dark Blue*/
     background: #0A3871;
-    border-radius: 24px;
-    /*Inside Auto Layout*/
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    border-radius: 1.5rem;
+    color: #fff;
+    font-size: 1em;
+}
+
+.boton_encriptar:hover {
+    background-color: #072B61;
 }
 
 .boton_desencriptar {
-    /*button*/
-    box-sizing: border-box;
-    /*Auto Layout*/
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 8px;
-    width: 328px;
-    height: 67px;
-    /*Light gray*/
-    background: #D8DFE8;
+    background-color: transparent;
     border: 1px solid #0A3871;
-    border-radius: 24px;
-    /*Inside Layout*/
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+    color: #0A3871;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    width: 100%;
 }
 
+.boton_desencriptar:hover {
+    background-color: #E9ECF8;
+}
 .card {
-    position: absolute;
-    width: 400px;
-    height: 944px;
-    left: 1000px;
-    top: 40px;
+    background-color: #fff;
+    max-width: 25rem;
+    /* position: absolute; */
+    width: 100%;
+    /* height: 944px; */
+    /* left: 1000px;
+    top: 40px; */
     /*white*/
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     /*shadow*/
+    padding: 2rem;
+    margin: 0 0 0 2.5rem;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0. 0.08);
-    border-radius: 32px;
+    border-radius: 2.25rem;
 }
 
 .contenedor_toy {
