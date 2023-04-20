@@ -173,6 +173,21 @@ body {
     background-color: #E9ECF8;
 }
 
+footer{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -40px;
+}
+
+#credit {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 1px;
+ }
+
+
 /*----------------------*/
 /* Responsivo para Tablet*/
 @media (max-width: 960px) {
