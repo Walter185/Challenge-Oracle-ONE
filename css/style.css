@@ -21,9 +21,15 @@ body {
     width: 100%;
 }
 
+.logo {
+    width: 120px;
+    height: 48px;
+ 
+}
 .header h1 {
     margin: 0 2.75rem 0 2.75rem;
 }
+
 
 .form {
     max-width: 42.5rem;
@@ -119,6 +125,7 @@ body {
 .contenedorToy {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .imagen_toy {
@@ -141,22 +148,6 @@ body {
     text-align: center;
     color: #495057;
 }
-/* .resultado {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-} */
-
-/* .res {
-    height: 100%;
-    margin: 0 0 1rem 0;
-    word-wrap: break-word;
-    color: #495057;
-    font-size: 1.5em;
-    line-height: 1.5em;
-} */
 
 .copiar {
     width: 100%;
@@ -190,9 +181,13 @@ footer{
     display: none;
 }
 
+.copiar {
+    display: none;
+}
+
 /*----------------------*/
 /* Responsivo para Tablet*/
-@media (max-width: 960px) {
+@media screen and  (max-width: 960px) {
     .container {
         width: 100%;
         flex-direction: column;
@@ -200,11 +195,16 @@ footer{
     }
     .header {
         max-width: 100%;
-        height: 7.5rem;
+        height: 6rem;
         margin: 0 0 2.5rem 0;
         display: flex;
         align-items: center;
         flex-flow: row nowrap;
+    }
+
+    .logo {
+        width: 30px;
+        
     }
     .header h1 {
         margin: 0;
@@ -215,7 +215,7 @@ footer{
     }
     .form_textarea {
         margin: 2.5rem 0 0 0;
-        height: -webkit-fill-available;
+        min-height: 36.25rem;
     }
     .contenedor_botones {
         width: 100%;
@@ -250,7 +250,7 @@ footer{
 /*----------------------*/
 /* Responsivo para Mobile*/
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .container {
         width: 100%;
         padding: 0 0 2.5rem 0;
@@ -266,6 +266,8 @@ footer{
         align-items: center;
         flex-flow: row nowrap;
     }
+
+    
     .header h1 {
         margin: 0;
     }
@@ -290,10 +292,5 @@ footer{
     .imagen_toy {
         display: none;
     }
-    .res {
-        margin: 0 0 2rem 0;
-    }
-    .disable {
-        display: none;
-    }
-}
+   
+ }
