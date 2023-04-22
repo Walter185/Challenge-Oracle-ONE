@@ -116,7 +116,7 @@ body {
     align-items: center;
 }
 
-.contenedor_toy {
+.contenedorToy {
     display: flex;
     flex-direction: column;
 }
@@ -125,10 +125,9 @@ body {
     margin: 0 0 2rem 0;
 }
 
-.mensaje {
-    display: flex;
+.msje {
     text-align: center;
-    flex-direction: column;
+    display: inline;
 }
 .no_message {
     font-size: 1.5rem;
@@ -142,24 +141,24 @@ body {
     text-align: center;
     color: #495057;
 }
-.resultado {
+/* .resultado {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+} */
 
-.res {
+/* .res {
     height: 100%;
     margin: 0 0 1rem 0;
     word-wrap: break-word;
     color: #495057;
     font-size: 1.5em;
     line-height: 1.5em;
-}
+} */
 
-.boton_resultado {
+.copiar {
     width: 100%;
     padding: 1.5rem;
     background-color: transparent;
@@ -169,7 +168,7 @@ body {
     cursor: pointer;
 }
 
-.boton_resultado:hover {
+.copiar:hover {
     background-color: #E9ECF8;
 }
 
@@ -187,6 +186,9 @@ footer{
     letter-spacing: 1px;
  }
 
+.invisible {
+    display: none;
+}
 
 /*----------------------*/
 /* Responsivo para Tablet*/
@@ -213,7 +215,7 @@ footer{
     }
     .form_textarea {
         margin: 2.5rem 0 0 0;
-        min-height: 36.25rem;
+        height: -webkit-fill-available;
     }
     .contenedor_botones {
         width: 100%;
@@ -224,12 +226,18 @@ footer{
         max-width: 100%;
         padding: 2rem;
         margin: 0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-between;
     }
-    .contenedor_toy {
+    
+    .contenedorToy {
         width: 100%;
     }
     .imagen_toy {
         display: none;
+        position: sticky;
     }
     .res {
         margin: 0 0 2rem 0;
@@ -276,7 +284,7 @@ footer{
         padding: 2rem;
         margin: 0 1rem 0 1rem;
     }
-    .contenedor_toy {
+    .contenedorToy {
         max-width: 100%;
     }
     .imagen_toy {

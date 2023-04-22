@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link rel="icon" type="image/png" href="img/logo.png">
     <title>Encriptador Alura</title>
 </head>
 <body>
@@ -20,28 +20,28 @@
         </header>
 
         <form class="form">
-            <textarea class="form_textarea" id="message" placeholder="Ingrese el texto aquí"></textarea>
+            <textarea class="form_textarea" placeholder="Ingrese el texto aquí" required autofocus></textarea>
             <div class="info">
-                <img class="imagen_info" src="img/info.png" alt="info" loading="lazy">
-                <p class="disable">Sólo letras minúsculas y sin acentos</p>
+                <img class="imagen_info" src="img/info.png" alt="info">
+                <p class="warning">Sólo letras minúsculas y sin acentos</p>
             </div>
             <div class="contenedor_botones">
-                <button class="boton_encriptar" onclick="encriptar(event)">Encriptar</button>
-                <button class="boton_desencriptar" onclick="desencriptar(event)">Desencriptar</button> 
+                <button class="boton_encriptar" onclick="btnEncriptar()">Encriptar</button>
+                <button class="boton_desencriptar" onclick="btnDesencriptar()">Desencriptar</button> 
             </div>
           
         </form>
         <div class="card">
-            <div class="contenedor_toy">
-                <img class="imagen_toy" src="img/toy.png" alt="toy" loading="lazy">
-                <div class="mensaje">
+            <div class="contenedorToy">
+                <img class="imagen_toy" src="img/toy.png" alt="toy">
+                <div class="msje">
                     <p class="no_message">Ningún mensaje fue encontrado</p>
                     <p class="ingresa_texto">Ingresa el texto que desees encriptar o desencriptar</p>
                 </div>
             </div>
-            <div class="resultado disable">
-                <p class="res" id="texto"></p>
-                <button class="boton_resultado" onclick="copiarEnPortapapeles()">Copiar</button>
+            <div  id="result">
+                <textarea disabled></textarea>
+                <button class="copiar" data-clipboard-target=".contenedorToy" onclick="copiarTexto()">Copiar</button>
             </div>
         </div><br>
         
@@ -52,5 +52,9 @@
         </div>
     </footer>
     <script src="js/index.js"></script>
+    <script src="./clipboard.min.js"></script>
+    <script>
+        var clipboard = new ClipboardJS(".copiar")
+    </script>
 </body>
 </html>

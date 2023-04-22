@@ -1,90 +1,72 @@
 // Dicionario para encriptar
-const diccionario = {
-    'e': 'enter',
-    'i': 'imes',
-    'a': 'ai',
-    'o': 'ober',
-    'u': 'ufat'
-};
+const diccionario = [["e","enter"],["i","imes"],["a","ai"],["o","ober"],["u","ufat"]];
+const textArea = document.querySelector(".form_textarea");
+const mensaje = document.querySelector(".contenedorToy");
+const informacion = document.querySelector(".info");
 
-function encriptar(text){
-    let resultado = '';
-
-    for (let i = 0; i < text.length; i++) {
-        const char = text[i];
-
-        if (diccionario[char]) {
-            resultado += diccionario[char];
-        } else {
-            resultado += char;
+function encriptar(textoEncriptado) {
+    for (let i=0; i<diccionario.length; i++) {
+        if (textoEncriptado.includes(diccionario[i][0])) {
+            textoEncriptado = textoEncriptado.replaceAll(diccionario[i][0], diccionario[i][1]);
         }
     }
-    return resultado;
-}
-const pattern = /^[a-z\s]*$/;
-
-function handleEncryption() {
-    const inputText = document.getElementById('message').value.toLowerCase();
-
-    if (!pattern.test(inputText)) {
-        document.getElementById('error').textContent = 'Ingrese solo letras minúsculas y sin acentos';
-        document.getElementById('resultado').textContent = '';
-        return;
-    }
-    const textoEncriptado = encriptar(inputText);
-
-    document.getElementById('resultado').textContent = textoEncriptado;
-    document.getElementById('error').textContent = '';
-
+    return textoEncriptado;
 }
 
-function desencriptar(textoEncriptado){
-    let resultado = '';
 
-    //Reemplazamos cada caracter encriptado por su letra original
-    for (let i = 0; i < textoEncriptado.length;) {
-        const substring = textoEncriptado.substring(i);
-        const match = substring.match(/^(enter|imes|ai|ober|ufat)/);
-    
-    if (match) {
-        resultado += Object.keys(diccionario)
-        .find(key => diccionario[key] === match[0]);
-        i += match[0].length;
-    } else {
-        resultado += substring[0];
-        i++;
-    }
-    
-
-
-// Probando si funciona 
-// const textoEncriptado = encriptar('hola');
-// console.log(textoEncriptado);
-// const textoDesencriptado = desencriptar(textoEncriptado);
-// console.log(textoDesencriptado);
-    }}
-// Copiando resultado en el portapapeles
-async function copiarEnPortapapeles() {
-    let text = document.getElementById('texto').innerHTML;
-    try {
-        await navigator.clipboard.writeText(text);
-        // mostrar mensaje de copiado
-        console.log("Texto copiado al portapapeles" + text);
-    } catch (err) {
-        // mostrar mensaje de no copiado
-        console.error("Error al copiar texto al portapapeles:", err);
-    }
-
-// let resultadoCopiado = document.getElementById('resultado');
-
-// resultadoCopiado.value = resultado;
-// resultadoCopiado.style.display = 'block';
-
-// navigator.clipboard.writeText(resultado)
-// .then(() => console.log('Texto copiado'))
-// .catch(err => console.log('Error al copiar el texto: ', err));
-//     }
-// return resultado;
+function ocultar(elemento) {
+    document.querySelector(elemento).style.display="none";
 }
 
+function mostrar(elemento) {
+    document.querySelector(elemento).style.display="block";
+}
+
+
+
+function btnEncriptar() {
+    const encriptacion = encriptar(textArea.value);
+    if(isLowerCaseWithSpaces(encriptacion) && encriptacion != "") {
+        mensaje.innerHTML = encriptacion;
+        textArea.value = "";
+        informacion.style.color = "blue";
+        mostrar(".copiar");
+    }
+    else {
+        informacion.style.color = "red";
+    }
+}
+
+function desencriptar(textoDesencriptado){
+    textoDesencriptado = textoDesencriptado.toLowerCase();
+    for(let i=0; i<diccionario.length; i++){
+        if(textoDesencriptado.includes(diccionario[i][1])){
+            textoDesencriptado = textoDesencriptado.replaceAll(diccionario[i][1], diccionario[i][0]);
+        }
+    }
+    return textoDesencriptado;
+}
+
+function btnDesencriptar() {
+    const desencriptacion = desencriptar(textArea.value);
+    if(isLowerCaseWithSpaces(desencriptacion) && desencriptacion != "") {
+        mensaje.innerHTML = desencriptacion;
+        textArea.value = "";
+        informacion.style.color = "blue";
+    }
+    else {
+        informacion.style.color = "red";
+    }
+}
+
+function copiarTexto() {
+    mensaje.select();
+    mensaje.setSelectionRange(0, 99999);
+    navigator.mensaje.writeText(mensaje.value);
+}
+
+function isLowerCaseWithSpaces(input) {
+    const allowedCharsRegex = /^[a-z]/;
+    return allowedCharsRegex.test(input);
+  }
 
