@@ -20,14 +20,14 @@
         </header>
 
         <form class="form">
-            <textarea class="form_textarea" placeholder="Ingrese el texto aquí"></textarea>
+            <textarea class="form_textarea" id="message" placeholder="Ingrese el texto aquí"></textarea>
             <div class="info">
                 <img class="imagen_info" src="img/info.png" alt="info" loading="lazy">
                 <p class="disable">Sólo letras minúsculas y sin acentos</p>
             </div>
             <div class="contenedor_botones">
-                <button class="boton_encriptar">Encriptar</button>
-                <button class="boton_desencriptar">Desencriptar</button> 
+                <button class="boton_encriptar" onclick="encriptar(event)">Encriptar</button>
+                <button class="boton_desencriptar" onclick="desencriptar(event)">Desencriptar</button> 
             </div>
           
         </form>
@@ -40,8 +40,8 @@
                 </div>
             </div>
             <div class="resultado disable">
-                <p class="res"></p>
-                <button class="boton_resultado">Copiar</button>
+                <p class="res" id="texto"></p>
+                <button class="boton_resultado" onclick="copiarEnPortapapeles()">Copiar</button>
             </div>
         </div><br>
         
