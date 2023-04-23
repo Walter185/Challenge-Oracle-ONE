@@ -66,7 +66,13 @@ function copiarTexto() {
 }
 
 function isLowerCaseWithSpaces(input) {
-    const allowedCharsRegex = /^[a-z]/;
-    return allowedCharsRegex.test(input);
+    for (var i = 0; i < input.length; i++) {
+      var charCode = input.charCodeAt(i);
+      // check if the character is a lowercase letter or space
+      if (!(charCode >= 97 && charCode <= 122 || charCode === 32)) {
+        return false;
+      }
+    }
+    return true;
   }
-
+  
