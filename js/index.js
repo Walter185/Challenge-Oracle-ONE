@@ -53,6 +53,7 @@ function btnDesencriptar() {
         mensaje.innerHTML = desencriptacion;
         textArea.value = "";
         informacion.style.color = "blue";
+        mostrar(".copiar");
     }
     else {
         informacion.style.color = "red";
